@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP-TELEPORT // Origin Hunter</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="hud-container">
+    <header class="hud-header">
+      <div class="header-branding">
+        <img src="icons/icon32.png" alt="Logo" class="header-logo-img">
+        <div class="header-titles">
+          <span class="brand-title" data-i18n="brandTitle">IP-TELEPORT</span>
+          <span class="brand-sub" data-i18n="brandSub">ORIGIN HUNTER & TIMELINE AUDITOR</span>
+        </div>
+      </div>
+      <div class="header-controls">
+        <div class="header-status" id="shieldStatus">
+          <span class="status-indicator"></span>
+          <span class="status-text" id="shieldText" data-i18n="statusAnalyzing">ANALYZING...</span>
+        </div>
+        <button class="btn-icon" id="btnDetach" title="Detach to Floating Window (Keeps Window Open)">&#x2922;</button>
+      </div>
+    </header>
+
+    <div class="target-card">
+      <div class="target-row">
+        <span class="target-label" data-i18n="targetDomain">TARGET DOMAIN:</span>
+        <span class="target-value" id="targetHost">-</span>
+      </div>
+      <div class="target-row">
+        <span class="target-label" data-i18n="currentIp">CURRENT PUBLIC IP:</span>
+        <div class="target-ip-wrap">
+          <a class="target-ip-link safe-tab-link" id="currentIpLink" href="#">-</a>
+          <button class="btn-copy" id="btnCopyCurrentIp" data-i18n="copyBtn" title="Copy Current IP">COPY</button>
+        </div>
+      </div>
+      <div class="target-meta" id="currentIpMeta">
+        <span class="meta-badge" id="geoBadge">-</span>
+        <span class="meta-badge" id="asnBadge">-</span>
+        <span class="meta-badge" id="orgBadge">-</span>
+      </div>
+      <div class="shodan-ports-section" id="shodanPortsWrap">
+        <span class="ports-label" data-i18n="intelLabel">SHODAN & CENSYS INTEL:</span>
+        <div class="ports-badges" id="shodanPortsList">
+          <span class="port-empty" data-i18n="scanningPorts">Scanning open ports & services...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hunter-section">
+      <div class="hunter-header">
+        <div class="hunter-title-wrap">
+          <div class="radar-spinner" id="radarSpinner"></div>
+          <span class="hunter-title" data-i18n="hunterTitle">MULTI-VECTOR ORIGIN HUNTER</span>
+        </div>
+        <div class="hunter-actions">
+          <span class="cache-indicator" id="cacheBadge"></span>
+          <button class="btn-rescan" id="btnRescan" data-i18n="forceRescan">FORCE RE-SCAN</button>
+        </div>
+      </div>
+      <div class="hunter-status" id="hunterStatusText" data-i18n="hunterInitial">
+        Probing historical archives, Censys, Shodan, URLScan, FFUF subdomains & Robtex PDNS...
+      </div>
+
+      <div class="origin-results-list" id="originResultsList">
+        <div class="loading-box">
+          <div class="progress-bar"><div class="progress-fill"></div></div>
+          <span>Probing leak vectors, Robtex PDNS timeline, Censys & URLScan...</span>
+        </div>
+      </div>
+    </div>
+
+    <footer class="hud-footer">
+      <div class="quick-intel-links">
+        <a id="linkShodanDomain" href="#" class="footer-link safe-tab-link">SHODAN</a>
+        <span class="divider">|</span>
+        <a id="linkCensys" href="#" class="footer-link safe-tab-link">CENSYS</a>
+        <span class="divider">|</span>
+        <a id="linkRobtex" href="#" class="footer-link safe-tab-link">ROBTEX</a>
+        <span class="divider">|</span>
+        <a id="linkUrlscan" href="#" class="footer-link safe-tab-link">URLSCAN</a>
+        <span class="divider">|</span>
+        <a id="linkWayback" href="#" class="footer-link safe-tab-link">WAYBACK</a>
+        <span class="divider">|</span>
+        <a id="linkViewDns" href="#" class="footer-link safe-tab-link">VIEWDNS</a>
+        <span class="divider">|</span>
+        <a id="linkSecurityTrails" href="#" class="footer-link safe-tab-link">SECTRAILS</a>
+      </div>
+    </footer>
+
+    <div class="toast-notification" id="toastBox">Notification</div>
+  </div>
+  <script src="js/i18n.js"></script>
+  <script src="js/ffuf-engine.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+</html>
