@@ -38,7 +38,9 @@ The extension manifest requests `tabs`, `activeTab`, and `storage`, and declares
 
 ## Screenshots
 
-Screenshots are not included yet. Add only images that have been reviewed and irreversibly redacted: remove or replace real domains, IP addresses, hostnames, account details, organization branding, and other identifying or sensitive information. Use synthetic example data where possible.
+<p align="center">
+  <em>Product screenshots coming soon.</em>
+</p>
 
 ## Responsible use
 
